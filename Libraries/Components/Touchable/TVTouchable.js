@@ -40,7 +40,7 @@ export default class TVTouchable {
           config.onFocus(tvData);
         } else if (tvData.eventType === 'blur') {
           config.onBlur(tvData);
-        } else if (tvData.eventType === 'select') {
+        } else if (tvData.eventType === 'select' && Platform.OS !== 'android') {
           if (!config.getDisabled()) {
             config.onPress(tvData);
           }
